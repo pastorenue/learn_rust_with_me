@@ -36,5 +36,18 @@ pub fn run_hashmap() {
         (String::from("Yellow"), 50),
     ]);
     println!("{:?}", map);
-}
 
+    // get mut values. This will enable you to mutate the values
+    let mut data = HashMap::from(
+        [(String::from("Blue"), 10), (String::from("Yellow"), 50)]
+    );
+    let mut_values = data.values_mut();
+    for v in mut_values {
+        *v += 10;
+    }
+    for (v, k) in data.iter() {
+        println!("{}: {}", v, k);
+    }
+
+    println!("{:?}", data);
+}
