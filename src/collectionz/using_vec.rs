@@ -104,14 +104,18 @@ fn getting_elements_in_vec() {
     println!("{:?}", does_exist.unwrap());
     
     // getting error when trying to get an element that doesn't exist
-    let does_not_exist = v1[100];
-    println!("{:?}", does_not_exist);
+    // let does_not_exist = v1[100];
+    // println!("{:?}", does_not_exist);
+
+    // convert the list to a string.
+    let stra = v1.iter().map(|x| x.to_string()).collect::<Vec<String>>().join(", ");
+    println!("{:?}", stra);
 }
 
 /// Running the program.
 pub fn run() {
     // creating_vec();
     // pushing_to_and_extending_vec();
-    // getting_elements_in_vec();
-    creating_mixed_vec();
+    getting_elements_in_vec();
+    // creating_mixed_vec();
 }
